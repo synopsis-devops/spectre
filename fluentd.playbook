@@ -7,5 +7,5 @@
   	- name: Launch Daemon
   	  command:/etc/init.d/td-agent	
   	 
-	- name: copy the logstash config  
+	- name: copy the logstash configt  
       git: repo=https://synopsis-devops@github.com/synopsis-devops/logstash.git dest=/etc/td-agent
