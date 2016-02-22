@@ -1,0 +1,11 @@
+---
+- hosts: injester
+  tasks:
+  	- name: get server hostname
+  	  command:curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
+
+  	- name: Launch Daemon
+  	  command:/etc/init.d/td-agent	
+  	 
+	- name: copy the logstash config  
+      git: repo=https://synopsis-devops@github.com/synopsis-devops/logstash.git dest=/etc/td-agent
